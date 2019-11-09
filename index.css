@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    font-size: 2rem;
+    color: rgba(113, 113, 167, 0.907);
+}
+
+header div {
+    display: inline-block;
+}
+
+header div div:nth-child(1n) {
+    border: 1px solid ;
+    padding: 15px 15px;
+    background-color: rgb(32, 115, 218);
+    color: #02054b;
+    line-height: 1;
+    margin: -10xp;
+}
+
+header div div:nth-child(2n) {
+    border: 1px solid ;
+    padding: 8px 5px;
+    background-color: rgb(167, 9, 9);
+    color: #fca26b;
+    margin-top: 10px;
+}
+
+header div div:nth-child(3n) {
+    border: 1px solid ;
+    padding: 5px 20px;
+    background-color: rgb(232, 120, 0);
+    color: #2b1302;
+    margin-top: 10px;
+}
+
+
+.score {
+    display: flex;
+    align-items: stretch;
+}
+
+.wins {
+    font-size: 5rem;
+    line-height: 1;
+}
+
+.wins:nth-child(2) {
+    padding: 3px;
+    font-size: 4rem;
+    line-height: 1;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex: 2;
+    width: 100%;
+}
+
+.turn-indicator {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    font-size: 1.8rem;
+    color: rgb(0, 36, 91);
+}
+
+.players-name-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-size: 1.8rem;
+    background-color: rgba(188, 188, 188, 0.454);
+    z-index: 1;
+}
+
+.players-name-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background: transparent;
+    padding: 40px 100px;
+    
+}
+
+.players {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 5px 0 5px 0; 
+    border-radius: 5px; 
+    font-size: 1.5rem;
+}
+
+.red-player {
+    background: radial-gradient(#480808,#f34444, #931212);
+    box-shadow: 0px 2px 4px 2px  rgb(63, 0, 0);
+}
+
+.lable-red {
+    color: #6d0000;
+    background: radial-gradient(#e5c0c0, #b02424);
+    box-shadow: 0px 2px 2px 2px  rgb(63, 0, 0);
+}
+
+.blue-player {
+    background: radial-gradient(#0c0848,#4447f3, #1b1388);
+    box-shadow: 0px 2px 4px 2px  rgb(5, 0, 48);
+}
+
+.lable-blue {
+    color: #0a0063;
+    background: radial-gradient(#97b4ff, #3150cc);
+    box-shadow: 0px 2px 2px 2px  rgb(5, 0, 48);
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px; 
+    margin: 0 0 0 10px;
+}
+
+.players-name-form button {
+    align-self: end;
+    font-size: 1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px; 
+    border: 1px solid rgb(0, 36, 91);
+    box-shadow: 0px 0px 5px 0px;
+    color:  rgb(0, 36, 91);
+}
+
+.players-name-form button:hover {
+    box-shadow: 0px 0px 0px 0px;
+}
+
+.turn-pieces {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    border-radius: 50px; 
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: opacity 0.2s;
+}
+
+.turn-pieces-3d {
+    border-radius: 50px; 
+    height: 50px;
+    width: 50px;
+}
+
+.turn-pieces-3d.red {
+    background: radial-gradient(#bc1d1d, #a61f1f);
+}
+
+.turn-pieces-3d.blue {
+    background: radial-gradient(#1d20bc, #2d1fa6);
+}
+
+.turn-pieces.playing-blue {
+    opacity: 0;
+    transform: translate(-100%, 100%);
+    transition: transform 0.5s, opacity 0.5s 0.1s; 
+}
+
+.turn-pieces.playing-red {
+    opacity: 0;
+    transform: translate(100%, 100%);
+    transition: transform 0.5s, opacity 0.5s 0.1s; 
+}
+
+.game-field {
+    padding: 10px;
+    display: flex;
+    border: solid;
+    background-color: rgb(189, 213, 250);
+}
+
+.rows {
+    border: solid;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px; 
+    background-color: rgb(255, 255, 255);
+    border: 1px solid;
+    position: relative;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.rows.active span {
+    transform: translate(0, 0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.rows span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; 
+    transform: translate(0%, -100%);
+    transition: all .3s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+[data-isActive="false"] {
+    opacity: 0;
+}
+
+[data-section-display="false"] {
+    display: none;
+}
+
+.players-victory-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+    background-color: rgba(51, 51, 51, 0);
+}
+
+.victory {
+    position: relative;
+    height: 60%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.victory.blue {
+    background-color: rgba(137, 184, 255, 0.468); 
+}
+
+.victory.red {
+    background-color: rgba(255, 122, 122, 0.468); 
+}
+
+.victory h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding: 20px;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 32px;
+    width: 100%;
+    border-bottom-left-radius: 8px; 
+    border-bottom-right-radius: 8px; 
+}
+
+.red .button-container  {
+    background-color: rgba(255, 122, 122, 0.564);
+}
+
+.blue .button-container {
+    background-color: rgba(137, 184, 255, 0.619); 
+}
+
+.victory button {
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px; 
+    border: 1px solid rgba(0, 0, 0, 0.564);
+    box-shadow: 2px 2px 5px 0px;
+    color:  rgba(0, 0, 0, 0.667);
+}
+
+.victory button:hover {
+    box-shadow: 0px 0px 0px 0px;
+}
+
+#play-again {
+    border: 1px solid white;
+    color: white;
+}
+
+.blue #play-again {
+    background-color: rgba(62, 124, 218, 0.831);
+    box-shadow: 2px 2px 5px 0px rgb(0, 36, 91);
+}
+
+.red #play-again {
+    background-color: rgba(254, 3, 3, 0.324);
+    box-shadow: 2px 2px 5px 0px rgb(146, 0, 0);
+}
+
+#play-again:hover {
+    box-shadow: 0px 0px 0px 0px;
+}
+
+[data-victory-display="false"] {
+    display: none;
+}
+
+
+
+

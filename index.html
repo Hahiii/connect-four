@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./index.css">
+    <title>Connect Four</title>
+</head>
+
+<body>
+    <div class="game-container">
+        <header>
+            <div>
+                <div>C</div>
+                <div>o</div>
+                <div>n</div>
+                <div>n</div>
+                <div>e</div>
+                <div>c</div>
+                <div>t</div>
+            </div>
+            <div>
+                <div>F</div>
+                <div>o</div>
+                <div>u</div>
+                <div>r</div>
+            </div>
+        </header>
+        <main>
+            <section class="turn-indicator">
+                <div class="red-player turn-pieces" data-isActive="true">
+                    <div class="turn-pieces-3d red"></div>
+                </div>
+                <label class="players">Red Player</label>
+                <div class="score">
+                    <span class="wins">0</span>
+                    <span class="wins">:</span>
+                    <span class="wins">0</span>
+                </div>
+                <label class="players">Blue Player</label>
+                <div class="blue-player turn-pieces" data-isActive="true">
+                    <div class="turn-pieces-3d blue"></div>
+                </div>
+            </section>
+            <section class="players-name-container" data-section-display="true">
+                <form class="players-name-form">
+                    <label class="players lable-red"> Red Player:<input type="text" class="player"
+                            placeholder="enter you name" required></label>
+                    <label class="players lable-blue">Blue Player:<input type="text" class="player"
+                            placeholder="enter you name" required> </label>
+                    <button class="start-game">Start Game</button>
+                </form>
+            </section>
+            <section class="players-victory-container" data-victory-display="false">
+                <div class="victory">
+                    <h1 class="winner"></h1>
+                    <div class="button-container">
+                        <button id="new-game">New Game</button>
+                        <button id="play-again">Play Again</button>
+                    </div>
+                </div>
+            </section>
+            <section class="game-field">
+                <div id="0" class="column">
+                    <div id="0" class="rows"><span></span></div>
+                    <div id="1" class="rows"><span></span></div>
+                    <div id="2" class="rows"><span></span></div>
+                    <div id="3" class="rows"><span></span></div>
+                    <div id="4" class="rows"><span></span></div>
+                    <div id="5" class="rows"><span></span></div>
+                </div>
+                <div id="1" class="column">
+                    <div id="0" class="rows"><span></span></div>
+                    <div id="1" class="rows"><span></span></div>
+                    <div id="2" class="rows"><span></span></div>
+                    <div id="3" class="rows"><span></span></div>
+                    <div id="4" class="rows"><span></span></div>
+                    <div id="5" class="rows"><span></span></div>
+                </div>
+                <div id="2" class="column">
+                    <div id="0" class="rows"><span></span></div>
+                    <div id="1" class="rows"><span></span></div>
+                    <div id="2" class="rows"><span></span></div>
+                    <div id="3" class="rows"><span></span></div>
+                    <div id="4" class="rows"><span></span></div>
+                    <div id="5" class="rows"><span></span></div>
+                </div>
+                <div id="3" class="column">
+                    <div id="0" class="rows"><span></span></div>
+                    <div id="1" class="rows"><span></span></div>
+                    <div id="2" class="rows"><span></span></div>
+                    <div id="3" class="rows"><span></span></div>
+                    <div id="4" class="rows"><span></span></div>
+                    <div id="5" class="rows"><span></span></div>
+                </div>
+                <div id="4" class="column">
+                    <div id="0" class="rows"><span></span></div>
+                    <div id="1" class="rows"><span></span></div>
+                    <div id="2" class="rows"><span></span></div>
+                    <div id="3" class="rows"><span></span></div>
+                    <div id="4" class="rows"><span></span></div>
+                    <div id="5" class="rows"><span></span></div>
+                </div>
+                <div id="5" class="column">
+                    <div id="0" class="rows"><span></span></div>
+                    <div id="1" class="rows"><span></span></div>
+                    <div id="2" class="rows"><span></span></div>
+                    <div id="3" class="rows"><span></span></div>
+                    <div id="4" class="rows"><span></span></div>
+                    <div id="5" class="rows"><span></span></div>
+                </div>
+                <div id="6" class="column">
+                    <div id="0" class="rows"><span></span></div>
+                    <div id="1" class="rows"><span></span></div>
+                    <div id="2" class="rows"><span></span></div>
+                    <div id="3" class="rows"><span></span></div>
+                    <div id="4" class="rows"><span></span></div>
+                    <div id="5" class="rows"><span></span></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
