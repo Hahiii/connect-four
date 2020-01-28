@@ -12,4 +12,5 @@ Here you can find a live demo: [https://hahiii.github.io/connect-four/](https://
 This project uses vanilla JavaScript, CSS and HTML.
 
 ## Running the project
-To play the game, either use the live demo or clone the repo and then run it on a local server.
+Clone the repository,  then as there are no dependencies, you can straight away run local host like: python -m http.server 1234
+The local server will be then running on localhost:1234
